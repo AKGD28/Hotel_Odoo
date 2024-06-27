@@ -1,0 +1,10 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_batiment_gestion,batiment.gestion,model_batiment_gest,base.group_user,1,1,1,1
+access_chambre_gestion,chambre.gestion,model_chambre_gest,base.group_user,1,1,1,1
+access_commodites_gestion,commodites.gestion,model_commodites_gest,base.group_user,1,1,1,1
+access_client_gest,model_client_gest,model_client_gest,base.group_user,1,1,1,1
+access_reservation_gest,model_reservation_gest,model_reservation_gest,base.group_user,1,1,1,1
+access_payement_gest,model_payement_gest,model_payement_gest,base.group_user,1,1,1,1
+access_espace_gest,model_espace_gest,model_espace_gest,base.group_user,1,1,1,1
+access_staff_user,access_staff_user,model_staff,base.group_user,1,1,1,1
+access_staff_manager,access_staff_manager,model_staff,base.group_system,1,1,1,1

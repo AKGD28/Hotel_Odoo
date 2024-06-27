@@ -1,0 +1,49 @@
+<odoo>
+    <!-- Kanban View Definition for CommoditesGestion -->
+    <record model="ir.ui.view" id="commodites_gestion_kanban">
+        <field name="name">commodites.gestion.kanban</field>
+        <field name="model">commodites.gest</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_card">
+                            <div class="o_kanban_image">
+                                <t t-if="record.air_conditioning">
+                                    <img src="/web/static/src/img/air_conditioning_icon.png" alt="Air Conditioning"/>
+                                </t>
+                                <t t-if="record.wifi">
+                                    <img src="/web/static/src/img/wifi_icon.png" alt="Wi-Fi"/>
+                                </t>
+                                <t t-if="record.tv">
+                                    <img src="/web/static/src/img/tv_icon.png" alt="TV"/>
+                                </t>
+                                <t t-if="record.minibar">
+                                    <img src="/web/static/src/img/minibar_icon.png" alt="Minibar"/>
+                                </t>
+                            </div>
+                            <strong><field name="name"/></strong>
+                            <div>
+                                <field name="room_service"/>
+                            </div>
+                            <div>
+                                <field name="description"/>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <!-- Action Definition for CommoditesGestion -->
+    <record id="action_gestion_commodites_view_tree" model="ir.actions.act_window">
+        <field name="name">gestion.commodites.form.tree</field>
+        <field name="res_model">commodites.gest</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="view_id" ref="commodites_gestion_kanban"/>
+    </record>
+
+    <!-- Menu Item Definitions -->
+    <menuitem id="menuCommodites" name="Commodités Gestion" parent="menuDesBatiments" action="action_gestion_commodites_view_tree" sequence="10"/>
+</odoo>

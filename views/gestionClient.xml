@@ -1,0 +1,44 @@
+<odoo>
+
+   
+   <record model="ir.ui.view" id="client_gestion_tree">
+      <field name="name">client.gestion.tree</field>
+      <field name="model">client.gest</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="nom"/>
+          <field name="prenom"/>
+          <field name="id_numero"/>
+        </tree>
+      </field>
+    </record>
+
+    
+    <record model="ir.ui.view" id="client_gestion_form">
+        <field name="name">client.gestion.form</field>
+        <field name="model">client.gest</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="nom"/>
+                        <field name="prenom"/>
+                        <field name="id_numero"/>
+                        <field name="description"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action Definition for ClientGestion -->
+    <record id="action_client_gestion_view" model="ir.actions.act_window">
+        <field name="name">Gestion des Clients</field>
+        <field name="res_model">client.gest</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="client_gestion_tree"/>
+    </record>
+
+    <!-- Menu Item Definitions -->
+    <menuitem id="menuClientGestion" name="Client Gestion" parent="menuDesBatiments" action="action_client_gestion_view" sequence="10"/>
+</odoo>

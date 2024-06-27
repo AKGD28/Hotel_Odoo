@@ -1,0 +1,53 @@
+<odoo>
+    <!-- Tree View Definition for Staff -->
+    <record model="ir.ui.view" id="staff_tree_view">
+        <field name="name">staff.form</field>
+        <field name="model">staff</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="role"/>
+                <field name="department"/>
+                <field name="phone"/>
+                <field name="email"/>
+                <field name="active"/>
+                <field name="dateEmbauche"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form View Definition for Staff -->
+    <record model="ir.ui.view" id="staff_form_view">
+        <field name="name">staff.form</field>
+        <field name="model">staff</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="role"/>
+                        <field name="department"/>
+                        <field name="phone"/>
+                        <field name="email"/>
+                        <field name="image"/>
+                        <field name="active"/>
+                        <field name="dateEmbauche"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action Definition for Staff -->
+    <record id="action_staff_view_tree" model="ir.actions.act_window">
+        <field name="name">Gestion du Staff</field>
+        <field name="res_model">staff</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="staff_tree_view"/>
+    </record>
+
+    
+
+
+    <menuitem id="menuStaff" name="Gestion du Staff" parent="menuDesBatiments" action="action_staff_view_tree" sequence="10"/>
+</odoo>

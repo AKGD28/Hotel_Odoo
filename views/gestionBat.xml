@@ -1,0 +1,26 @@
+<odoo>
+    <record model="ir.ui.view" id="gestion_hotel.list">
+        <field name="name">gestion_bat.form</field>
+        <field name="model">batiment.gest</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="address"/>
+                <field name="city"/>
+                <field name="state"/>
+                <field name="zip_code"/>
+                <field name="country_id"/>
+                <field name="description"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_gestion_bat_view_tree" model="ir.actions.act_window">
+        <field name="name">gestion.batiment.form.tree</field>
+        <field name="res_model">batiment.gest</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menuDesBatiments" name="Hotel Gestion" sequence="10"/>
+    <menuitem id="menuBatiment" name="Batiment Gestion" parent="menuDesBatiments" action="action_gestion_bat_view_tree" sequence="10"/>
+</odoo>

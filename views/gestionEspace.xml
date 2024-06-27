@@ -1,0 +1,41 @@
+<odoo>
+    <!-- Tree View Definition for EspaceGestion -->
+    <record model="ir.ui.view" id="espace_gestion_tree">
+        <field name="name">espace.gestion.tree</field>
+        <field name="model">espace.gest</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="type_espace"/>
+                <field name="statut_espace"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form View Definition for EspaceGestion -->
+    <record model="ir.ui.view" id="espace_gestion_form">
+        <field name="name">espace.gestion.form</field>
+        <field name="model">espace.gest</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="type_espace"/>
+                        <field name="statut_espace"/>
+                        <field name="description"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action Definition for EspaceGestion -->
+    <record id="action_espace_gestion_view" model="ir.actions.act_window">
+        <field name="name">Gestion des Espaces</field>
+        <field name="res_model">espace.gest</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="espace_gestion_tree"/>
+    </record>
+
+    <!-- Menu Item Definitions -->
+    <menuitem id="menuEspaceGestion" name="Espace Gestion" parent="menuDesBatiments" action="action_espace_gestion_view" sequence="10"/>
+</odoo>
